@@ -64,8 +64,10 @@ ex)1 === "1" (false), 0 === 0n (false)
 
 <h1>JavaScript Simbol</h1>
 Simbol이란 개념은 독립적인 Key라고 보면 된다.
+
 ```
 let key1 = Simbol("a");
 let key2 = Simbol("a");
 ```
+
 key1 == key2 (false) 이다.
