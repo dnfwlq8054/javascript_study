@@ -68,6 +68,15 @@ Simbol이란 개념은 독립적인 Key라고 보면 된다.
 ```
 let key1 = Simbol("a");
 let key2 = Simbol("a");
+key1 == key2 (false) 
 ```
 
-key1 == key2 (false) 이다.
+즉, 서로 영향을 주지 않는다. 이런 Simbol을 공유할 수 있다.
+
+```
+let key1 = Simbol.for("a");
+let key2 = Simbol.for("a");
+key1 == key2 (true) 
+```
+
+이렇게 말이다.
