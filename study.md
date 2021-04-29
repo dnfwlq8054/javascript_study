@@ -99,4 +99,7 @@ console.log(user.address);  //error!!
 
 때문에 새롭게 나온것이 옵셔널 체이닝!!
 
-<code>.?</code>
+<code>.?</code>를 사용함으로서 해당객체에 안전하게 접근해, 애러를 발생시키지않고 <code>undefined</code>를 호출하게 해준다.
+
+때문에 비어있는 프로퍼티가 있더라도 계속 진행할 수 있다.
+
