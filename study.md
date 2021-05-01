@@ -103,3 +103,12 @@ console.log(user.address);  //error!!
 
 때문에 비어있는 프로퍼티가 있더라도 계속 진행할 수 있다.
 
+<h1> Object </h1>
+객체를 생성할때는 <code> new </code> 키워드를 사용해 호출한다.
+
+```
+
+let oj = new Object();
+let oj2 = new Date();
+
+```
