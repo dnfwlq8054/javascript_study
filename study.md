@@ -86,6 +86,7 @@ key1 == key2 (true)
 
 ```
 console.log(user?.address);
+
 ```
 
 세션을 맺거나 웹통신을 할 때 클라이언트 측에서 접속이 끊기거나 해당 객체 리소스가 비어있을 경우,
@@ -93,6 +94,7 @@ console.log(user?.address);
 
 ```
 console.log(user.address);  //error!!
+
 ```
 
 위 예시대로 작성하면 애러를 발생시켰다.
@@ -103,6 +105,22 @@ console.log(user.address);  //error!!
 
 때문에 비어있는 프로퍼티가 있더라도 계속 진행할 수 있다.
 
+다른 예제를 보자.
+
+```
+let f = null
+let x = 0;
+f(x++)  //error
+
+let f = null
+let x = 0;
+f?.(x++)  //undefined
+
+```
+
+
+
+
 <h1> Object </h1>
 객체를 생성할때는 <code> new </code> 키워드를 사용해 호출한다.
 
@@ -112,3 +130,37 @@ let oj = new Object();
 let oj2 = new Date();
 
 ```
+
+객체안에 배열이 들어갈 수 있고, 배열안에 객체가 들어갈 수 있다.
+
+```
+let a = [1, 4, [5, 6]]; 
+let b = {a, y: 3};
+b.a[0]  //output : 1
+
+let a = {x: 1, y: 2}
+let b = [a, 1, [2, 3]];
+b[0].x  //output : 1
+b[2][1] //output : 2
+b[2]    //output : (2) [2, 3]
+
+```
+
+<h1> Operator Side Effects (부작용) </h1>
+자바스크립트는 자료형이 없기 때문에 문자열 계산 과정에서 예기치 못한 상황이 벌어질 수 있다.
+
+때문에 문자열의 계산은 대부분 제공해주는 내장 함수로 해결해보자!!
+
+간단한 예를 들보자.
+
+```
+let v = "5" + "5"   //output : 55
+let a = "5" * "5"   //output : 25
+let c = "5" + 5     //output : 55
+let z = "5";
+z++
+console.log(z)      //output : 6
+
+```
+
+위 예제에서 보듯이 문자열 연산은 상당히 위험하니 되도록 지양하다록 하자.
