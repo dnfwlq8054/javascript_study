@@ -164,3 +164,39 @@ console.log(z)      //output : 6
 ```
 
 위 예제에서 보듯이 문자열 연산은 상당히 위험하니 되도록 지양하다록 하자.
+
+<h1> typeof </h1>
+typeof는 해당 변수의 자료형을 반환해준다.
+
+```
+let x = 1
+typeof(x)      //output : number
+
+let v = "1"   
+typeof(v)      //output : string
+
+let n = null
+typeof(n)      //output : object
+
+let un = undefined
+typeof(un)     //output : undefined
+
+let bool = true
+typeof(bool)   //output : boolean
+
+let sym = Sysbol()
+typeof(sym)    //output : symbol
+
+let arr = [1, 2, 3, 4]
+typeof(arr)    //output : object
+
+let obj = {x: 1, y: 2}
+typeof(obj)    //output : object
+
+function f(){}
+typeof(f)      //output : function
+
+```
+여기서 주목해야할 점은 배열과 null이다.
+
+배열과 null은 object로 동작하게 된다.
