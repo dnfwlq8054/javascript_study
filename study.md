@@ -200,3 +200,10 @@ typeof(f)      //output : function
 여기서 주목해야할 점은 배열과 null이다.
 
 배열과 null은 object로 동작하게 된다.
+
+<h1> for in, for of </h1>
+javascript에는 2가지 for문이 존재한다.
+
+of와 in.....
+
+of같은 경우에는 배열을 기준으로 
