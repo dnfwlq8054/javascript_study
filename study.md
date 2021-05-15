@@ -206,4 +206,7 @@ javascript에는 2가지 for문이 존재한다.
 
 of와 in.....
 
-of같은 경우에는 배열을 기준으로 
+for of 반복문은 ES6에 추가된 새로운 컬렉션 전용 반복 구문이다.
+
+for of에서 사용할 수 있는 것은 <code>Symbol.iterator</code> 객체 이다.
+
