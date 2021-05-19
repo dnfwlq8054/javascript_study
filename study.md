@@ -210,3 +210,10 @@ for of 반복문은 ES6에 추가된 새로운 컬렉션 전용 반복 구문이
 
 for of에서 사용할 수 있는 것은 <code>Symbol.iterator</code> 객체 이다.
 
+때문에 for of에서 반환되는 값들은 배열의 value 값들이다.
+
+for in 반복문은 모든 객체들이 사용할 수 있는 for loop 이다.
+
+for in은 value가 아닌 key값에 접근하게 된다. 즉, 배열기준 index로 접근을 하게 된다.
+
+때문에 for in을 돌리게되면 key 뿐만 아니라 다른 부가적인 요소들을 포함한 모든 것들이 출력되는것을 확인할 수 있다.
