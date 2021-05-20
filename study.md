@@ -269,4 +269,9 @@ for(let value of call()){
 
 이걸 사용했을 때 효과는 다음과 같다.
 
-<li> with을 허용하지 않는다. </
+<li> with을 허용하지 않는다. </li>
+<li> 선언하지 않고 전역변수를 만들 수 없다. </li>
+<li> 읽기 전용 객체는 쓰기가 불가능 하다.(writable이 false인 경우)</li>
+<li> get 으로 선언된 객체는 수정 불가능하다. </li>
+<li> `var testObj = new Object(); Object.preventExtensions(testObj);` 수정이 불가능 하다. </li>
+
