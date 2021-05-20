@@ -217,3 +217,46 @@ for in 반복문은 모든 객체들이 사용할 수 있는 for loop 이다.
 for in은 value가 아닌 key값에 접근하게 된다. 즉, 배열기준 index로 접근을 하게 된다.
 
 때문에 for in을 돌리게되면 key 뿐만 아니라 다른 부가적인 요소들을 포함한 모든 것들이 출력되는것을 확인할 수 있다.
+
+<h1> try / catch / finally /throw </h1>
+javascript에도 해당 오류 검출 구문이 존재한다.
+
+JAVA와 똑같다. try는 실행, catch는 try실행시 나는 에러, finally는 실행이 보장되는 구문.
+
+throw는 `throw new Error("String")` 으로 만들 수 있다.
+
+Error클래스를 사용한다고 한다.
+
+<h1> yield </h1>
+yield는 Javascript에서 비동기식으로 데이터를 처리할 때 사용한다고 한다. 
+
+iteartor를 구현하고 사용할 때 편하다는 장점이 있다. ex) `gen.next()`
+
+이것 또한 JAVA의 iterator와 유사하다.
+
+사용 방법은 다음과 같다.
+
+```
+
+function *call() {
+  yield 10;
+  yield 20;
+  yield 30;
+}
+
+for(let value of call()){
+    console.log(value);
+}
+
+//output : 10, 20 ,30
+
+```
+이렇게 쓰일 수 있다. 하지만 이것 외에도 Jvavscript는 async / await이 잘 구현되어 있다고 하니 굳이??
+
+사용할 일은 많지는 않을 것 같다.
+
+<h1> with </h1>
+쓰지마!!
+
+<h1> use strict </h1>
+엄격모드라고 한다.
