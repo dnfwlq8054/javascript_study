@@ -273,5 +273,17 @@ for(let value of call()){
 <li> 선언하지 않고 전역변수를 만들 수 없다. </li>
 <li> 읽기 전용 객체는 쓰기가 불가능 하다.(writable이 false인 경우)</li>
 <li> get 으로 선언된 객체는 수정 불가능하다. </li>
-<li> `var testObj = new Object(); Object.preventExtensions(testObj);` 수정이 불가능 하다. </li>
+<li> Object.preventExtensions(testObj); 수정이 불가능 하다. </li>
+<li> delete를 호출할 수 없다. </li>
+<li> 동일한 매개 변수를 선언하는 함수를 2개 이상 만들 수 없다. </li>
+<li> primitive values의 속성 설정이 불가능. </li>
+<li> eval의 새로운 변수를 스코프에 추가하지 않는다. </li>
+<li> arguments 객체가 생성한 property를 alias하지 않음 </li>
+<li> arguments.callee 지원하지 않음 </li>
+
+엄격 모드는 함수별로, 부분별로 선언할 수 있으며 비 엄격모드와 공존이 가능하다.
+
+코드 전체를 엄격 모드로 바꾸게 된다면, 기존에 있던 레거시 코드들이 작동 안할 수 있으니 주의하자!!
+
+
 
