@@ -286,4 +286,8 @@ for(let value of call()){
 코드 전체를 엄격 모드로 바꾸게 된다면, 기존에 있던 레거시 코드들이 작동 안할 수 있으니 주의하자!!
 
 <h1> export </h1>
+export는 Javascript에서 모듈 밖으로 값을 내보낼때 사용하는 것이다.
+
+반대로 export한 것을 받을 때는 import를 사용하면 된다.
+
 
