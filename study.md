@@ -290,4 +290,54 @@ export는 Javascript에서 모듈 밖으로 값을 내보낼때 사용하는 것
 
 반대로 export한 것을 받을 때는 import를 사용하면 된다.
 
+```
+//배열 내보내기
+export let months = ['Jan', 'Feb', 'Mar','Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+// 상수 내보내기
+export const MODULES_BECAME_STANDARD_YEAR = 2015;
+
+// 클래스 내보내기
+export class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+```
+
+함수도 내보낼 수 있다.
+```
+//say.js 파일
+
+function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
+
+function sayBye(user) {
+  alert(`Bye, ${user}!`);
+}
+
+export {sayHi, sayBye}; // 두 함수를 내보냄
+```
+
+import하려면 다음과 같이 하면 된다.
+```
+// 📁 main.js
+import {sayHi, sayBye} from './say.js';
+
+sayHi('John'); // Hello, John!
+sayBye('John'); // Bye, John!
+
+```
+
+가져올 것이 많으면 import * as <obj> 처럼 객체 형태로 원하는 것들을 가지고 올 수 있습니다. 예시를 살펴보겠습니다.
+  
+```
+  
+// 📁 main.js
+import * as say from './say.js';
+
+say.sayHi('John');
+say.sayBye('John');
+  
+```
