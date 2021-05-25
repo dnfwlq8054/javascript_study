@@ -357,4 +357,20 @@ Object의 접근 방법은 2가지가 있다.
 
 delete를 통해 속성을 제거할 수 있지만 굳이?? 라는 생각이 든다.
 
-  <h1> v8 engin memory </h1>
+  <h1> v8 engine memory </h1>
+  v8 engine은 stack과 heap으로 메모리를 관리한다.
+  
+  stack에는 전역 스코프가 들어가며, 객체 생성, 함수 호출시 스택에 적재 후 heap으로 데이터를 전달, 그 후 스택에서 pop된다.
+  
+  스택에는 frame이라는 것으로 감싸서 관리하게 된다. frame은 전역 스코프를 넣는 global frame이 제일 밑에 깔리며, 함수, 객체 생성시 해당 객체애 대한 frame이 생성된다.
+  
+  물론 pop되는 순간 모두 사라지지만 말이다....
+  
+  그외 async / await을 사용하기 위해 web api를 사용한다.
+  
+  자세한 내용은 여기를 참고하자.
+  
+  https://deepu.tech/memory-management-in-v8/
+  
+  
+  
