@@ -373,4 +373,75 @@ delete를 통해 속성을 제거할 수 있지만 굳이?? 라는 생각이 든
   https://deepu.tech/memory-management-in-v8/
   
   
+  <h1> this </h1>
+  javascript에서의 this는 일반적인 java에서 사용된는 this와 차이점이 있다.
+
+총 4가지의 방법을 제시한다.
+
+1. this자체는 실행 환경의 전역 객체가 된다.
+chrome 기준 객체는 window가 된다.
+
+2. this 객체를 통해 등록한 변수들은 지역 스코프에서 정의해도 전역 스코프에서 선언한 것과 같은 결과가 된다.
+
+3. 어떤 객체를 통해 함수가 호출되면 this는 호출한 객체가 된다.
+```
+asdfasfsdf
+```
+function test() {
+  console.log(this.a);
+}
+
+var obj = {
+  a: 20,
+  func1: test,
+  func2: function() {
+    console.log(this.a);
+  }
+};
+
+obj.func1(); // 20
+obj.func2(); // 20
+
+
+그럼 다음 예제를 보자.
+
+var b = 100;
+
+function test() {
+  console.log(this.b);
+}
+
+var obj = {
+  a: 20,
+  func1: test,
+  func2: function() {
+    console.log(this.b);
+  }
+};
+
+obj.func1(); // undefined
+obj.func2(); // undefined
+
+var gFunc1 = obj.func1;
+gFunc1(); // 100
+
+
+
+
+```
+obj 까지는 이해가 될 것이다.
+문제는 그 다음인데, obj객체를 gFunc1로 전달해주고 있다.
+this.b는 b를 가르키므로 100이 된다.
+즉, 실행하는 객체의 위치에 따라 this가 참조하는 객체는 달라진다.
+
+4.명시적 바인딩
+함수 뒤에 .call() 함수를 실행하여 this 를 명시적으로 지정해 줄 수 있다.
+
+5. new 바인딩
+
+let a = new fnc(10)
+이런식으로 new를 통해 객체를 반환해주면 this는 고정된다.
+여기서 고정의 의미는 fnc에 등록된 매개변수를 기준으로 고정된다는 뜻이다.
+
+
   
