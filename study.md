@@ -440,4 +440,4 @@ let a = new fnc(10)
 여기서 고정의 의미는 fnc에 등록된 매개변수를 기준으로 고정된다는 뜻이다.
 
 
-  <h1> v8 engine </h1>
+  <h1> promise </h1>
