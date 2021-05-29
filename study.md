@@ -477,7 +477,19 @@ digits // ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E", "F"]
 ```
   배열 생성자를 통해 범위를 설정해 줄 수 있지만 별로 의미는 없는 것 같다.
 ```
-  let q = new Array(10)
+let q = new Array(10) //길이 = 10
 q[14] = 1
-console.log(q)
+console.log(q)  //길이 = 14
+
+let a = new Array(1, 2, 3, 4) // 길이 4(초기화)
   ```
+  JavaScript의 배열의 인덱스를 숫자가 아닌 문자열이나 그 외의 값으로 지정할 수 있다. (그렇게되면 객체를 넣는 것과 같은것이 된다.)
+  ```
+let z = []
+z["name"] = 1
+console.log(z[0]) //undefined
+console.log(z.name) // 1
+console.log(z["name"]) // 1
+  ```
+
+  
