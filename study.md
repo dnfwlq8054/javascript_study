@@ -492,4 +492,19 @@ console.log(z.name) // 1
 console.log(z["name"]) // 1
   ```
 
+  배열에 length로 길이를 반환할수도, 길이를 설정할 수도 있다.
+  ```
+  let a = [1, 2, 3] // a.length = 3
+  a.length = 0 // a.length = 0, 모든 요소  delete
+  a.length = 1000 // a.length = 1000
+  ```
+  
+  delete는 속성의 연결만 끊을 뿐 힙 메모리에서 데이터를 직접적으로 삭제해주진 않는다.
+  
+  따라서 delete보단 undefined나 null 값을 넣어주는 것이 좋다.
+  
+  배열 길이자체를 줄이고 싶다면, pop, shift, filter, reduce 등을 사용하자.
+  
+  string은 배열 인덱스 형식으로 접근이 가능하지만, 읽기전용이라서 수정이 불가능 하다.
+  
   
