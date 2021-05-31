@@ -4,7 +4,7 @@
 
 처음에는 Mocha라는 이름이었지만 4달 만에 LiveScript라는 이름으로 개명하고 다시 3달 후에는 JavaScript라는 이름이 되어 오늘날까지 이어지고 있다. 
 
-JavaScript라고 짛은 이유는 Java의 유명세를 타서 묻어가려고 의도적으로 만들었다고 한다. ㅋ
+JavaScript라고 지은 이유는 Java의 유명세를 타서 묻어가려고 의도적으로 만들었다고 한다. ㅋ
 
 <h1> ECMAScript </h1>
 ECMA International 이라는 국제 표준화 기구가 있다.
