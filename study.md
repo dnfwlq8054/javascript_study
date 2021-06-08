@@ -517,4 +517,32 @@ console.log(z["name"]) // 1
   
   map과 flatmap의 차이점은 둘 다 동일한 기능을 하지만 flatmap은 이중 배열같은 속성값을 하나의 배열로 변환시켜서 반환해준다.
 
+  
+  <h1> Function </h1>
+  자바스크립트에서 함수는 객체처리가 된다.
+  
+  자바스크립트에서 함수를 정의할 때 ES6부터 '=>' 를 사용할 수 있게 되었다.
+  
+  사용법은 다음과 같다.
+  
+  ```
+  const sum = (x, y) => { return x + y; };
+  const sum = (x, y) => x + y;
+  const polynomial = x => x*x + 2*x + 3;
+  const constantFunc = () => 42;
+  
+  ```
+  다음은 객체를 인자로 받을 때 좋은 예와 안좋은 예를 보여준다.
+  
+  ```
+  const f = x => { return { value: x }; };  //Good
+  const g = x => ({ value : x });  //Good
+  const h = x => { value: x }   //Bad
+  const i = x => { v: x, w: x };
+ 
+  ```
+ 해당 람다 함수의 정의는 map(), filter(), reduce()를 사용할 때 좋다.
+  
+  
+  
  
