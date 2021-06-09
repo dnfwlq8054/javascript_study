@@ -543,6 +543,51 @@ console.log(z["name"]) // 1
   ```
  해당 람다 함수의 정의는 map(), filter(), reduce()를 사용할 때 좋다.
   
+ bind가 있다. 객체를 묶어주는 녀석이라고 한다.
   
+ bind를 사용할 때는 this를 조심해야 한다.
   
+  해당 함수에 대해서 호출할 때에는 this는 부모 함수를 가르키지만,
+  
+  함수를 변수에 전달 했을때의 this는 전연변수의 this를 가르킨다.
+  
+  ex1)
+  ```
+  const module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+};
+
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// expected output: 42
+
+  ```
+  ex2)
+  ```
+  
+  this.x = 9;
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
+
+module.getX(); // 81
+
+var retrieveX = module.getX;
+retrieveX();
+// 9 반환 - 함수가 전역 스코프에서 호출됐음
+
+// module과 바인딩된 'this'가 있는 새로운 함수 생성
+// 신입 프로그래머는 전역 변수 x와
+// module의 속성 x를 혼동할 수 있음
+var boundGetX = retrieveX.bind(module);
+boundGetX(); // 81
+  ```
  
