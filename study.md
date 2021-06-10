@@ -591,3 +591,6 @@ var boundGetX = retrieveX.bind(module);
 boundGetX(); // 81
   ```
  
+  <h1> javaScript guideline </h1>
+  
+  java
