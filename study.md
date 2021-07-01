@@ -646,6 +646,45 @@ boundGetX(); // 81
   https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes
   여기서 확인할 수 있다.
   
-      
+  <h1> closure </h1>
+  closure는 함수 내부의 변수를 공유할 수 있다.
   
+  ```
+  var arr = [];
+
+  for (var i = 0; i < 5; i++) {
+    arr[i] = function () {
+      return i;
+    };
+  }
+
+  for (var j = 0; j < arr.length; j++) {
+    console.log(arr[j]());
+  }
+  ```
+  해당 함수를 실행하면 0, 1, 2, 3, 4 가 나올것을 기대하지만 5만 출력된다. 이는 var로 선언되어 전역변수로 i가 이용되기 때문이다.
   
+  let을 사용하면 해결할 수 있다. 
+  
+  ```
+  const arr = [];
+
+  for (let i = 0; i < 5; i++) {
+    arr[i] = function () {
+      return i;
+    };
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]());
+  }
+  ```
+  
+  고차 함수 법이다.
+  ```
+  const arr = new Array(5).fill();
+
+  arr.forEach((v, i, array) => array[i] = () => i);
+
+  arr.forEach(f => console.log(f()));
+  ```
