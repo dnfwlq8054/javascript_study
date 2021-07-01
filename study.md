@@ -631,8 +631,21 @@ boundGetX(); // 81
   
   마치 C++에서 쓰레드를 사용해 함수호출하는 것과 동일하게 작성이 될 수 있다는 뜻이다.
   
-  <h1> bind </h1>
-  
-  
   
   <h1> module.exports </h1>
+  
+  <h1> prototype </h1>
+  javascript는 prototpye 언어이다. 최상위에는 Object 객체가 있다.(java처럼)
+  
+  모든 객체들은 이 Object를 상속받는데, 그러한 객채들은 Object.prototype 을 사용할 수 있다.
+  
+  이때 상속 받은 객채들은 Object의 기능을 모두 복사하여 메모리에 받는것이 아니라 체인 형식으로 타고타고 올라가게 된다.
+  
+  즉, reference형식이다.(참조 방식)
+  
+  https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes
+  여기서 확인할 수 있다.
+  
+      
+  
+  
