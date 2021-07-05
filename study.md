@@ -703,4 +703,7 @@ boundGetX(); // 81
   }
   ```
   
+  상속을 받을라면 extends를 사용하면 된다.
+  super를 사용하면 this로 부모 변수에 접근이 가능하며, super()에 argument를 넣어주면 부모 클래스의 생성자를 호출한다.
+  
   
