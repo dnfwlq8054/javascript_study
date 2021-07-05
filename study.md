@@ -688,3 +688,19 @@ boundGetX(); // 81
 
   arr.forEach(f => console.log(f()));
   ```
+
+  <h1> class </h1>
+  javascript에서 class를 선언할 수 있다. class는 new를 통해 할당할 수 있으며,
+  생성자 또한 만들 수 있다.
+  클래스를 선언하고 생성자를 만드는 예는 다음과 같다.
+  
+  ```
+  class Range {
+    constructor(from, to) {
+      this.from = from;
+      this.to = to;
+    }
+  }
+  ```
+  
+  
