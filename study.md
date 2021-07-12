@@ -691,7 +691,7 @@ boundGetX(); // 81
 
   <h1> class </h1>
   javascript에서 class를 선언할 수 있다. class는 new를 통해 할당할 수 있으며,
-  생성자 또한 만들 수 있다.
+  생성자 또한 만들 수 있다. 보통 클래스는 대문자로 시작한다.
   클래스를 선언하고 생성자를 만드는 예는 다음과 같다.
   
   ```
@@ -705,5 +705,37 @@ boundGetX(); // 81
   
   상속을 받을라면 extends를 사용하면 된다.
   super를 사용하면 this로 부모 변수에 접근이 가능하며, super()에 argument를 넣어주면 부모 클래스의 생성자를 호출한다.
+
+javascript에서는 generator라는 기능이 있다. 해당 기능은 yield를 만나면 해당 위치까지만 저장하게 되며, 이때 함수의 반환값은 iterator가 된다.
+
+아래 예제를 보면 좀 더 이해하기 쉬울 것이다.
+
   
-  
+```
+  function* anotherGenerator(i) {
+  yield i + 1;
+  yield i + 2;
+  yield i + 3;
+}
+
+function* generator(i){
+  yield i;
+  yield* anotherGenerator(i);
+  yield i + 10;
+}
+
+var gen = generator(10);
+
+console.log(gen.next().value); // 10
+console.log(gen.next().value); // 11
+console.log(gen.next().value); // 12
+console.log(gen.next().value); // 13
+console.log(gen.next().value); // 20
+  ```
+
+Generator는 생성자로서 사용될 수 없다.
+```
+function* f() {}
+var obj = new f; // throws "TypeError: f is not a constructor"
+```
+
