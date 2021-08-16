@@ -33,4 +33,92 @@ Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값�
 Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태
   
   then을 사용하여 체이닝 식의 코드를 짜는것이 가능하다.
-  또한 비동기시 다른 언어의 join인과 비슷하게 pending상태를 하여 비동기가 처리를 끝낼때 까지 기다릴 수 있다.
+  pending상태를 하여 비동기가 처리를 끝낼때 까지 기다릴 수 있다.
+  then을 사용할 때에는 promise객체를 반환해 줘야한다. 이것이 약속이다.
+
+Promise는 인자로 resolve와 reject을 인자로 받는다.
+resolve는 완료, reject은 거부를 의미하며, catch문을 사용하여 에러를 처리할 수 있다.
+finally는 거부든 완료든 상관 없이 무조건 수행한다.
+
+promise.all은 다른 promise함수들이 여러게 있을 때, 이를 join 상태를 만들 수 있다.
+
+```javascript
+Promise.allSettled([Promise.resolve(1), Promise.reject(2),
+3]).then(results => {
+results[0] // => { status: "fulfilled", value: 1 }
+results[1] // => { status: "rejected", reason: 2 }
+results[2] // => { status: "fulfilled", value: 3 }
+})
+```
+
+es2017에서 새로운 async와 await라는 두 가지 키워드를 도입했습니다.
+function 앞에 async라는 키워드를 붙인다.
+promise로 반환하는 것들 앞에 await을 붙인다.
+
+기존 promise를 사용하면 다음과 같이 해야 했다.
+
+```javascript
+// ES6
+let num = 0
+const f = _ => new Promise(resolve => {
+  setTimeout(_ => {
+    console.log(`${++num} 번째 실행`)
+    resolve()
+  }, 500)
+})
+f().then(f).then(f).then(f).then(f).then(f).then(f).then(f).then(f)
+```
+
+async/await.
+
+
+```javascript
+// ES6
+let num = 0
+const f = _ => new Promise(resolve => {
+  setTimeout(_ => {
+    console.log(`${++num} 번째 실행`)
+    resolve()
+  }, 500)
+});
+
+(async _ => { 
+  await f() 
+  console.log('test1')
+  await f()
+  console.log('test2')
+  await f()
+  console.log('test3')
+})();
+```
+
+다른 예시
+
+```javascript
+async function showAvatar() {
+
+  // JSON 읽기
+  let response = await fetch('/article/promise-chaining/user.json');
+  let user = await response.json();
+
+  // github 사용자 정보 읽기
+  let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+  let githubUser = await githubResponse.json();
+
+  // 아바타 보여주기
+  let img = document.createElement('img');
+  img.src = githubUser.avatar_url;
+  img.className = "promise-avatar-example";
+  document.body.append(img);
+
+  // 3초 대기
+  await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+
+  img.remove();
+
+  return githubUser;
+}
+
+showAvatar();
+```
+
